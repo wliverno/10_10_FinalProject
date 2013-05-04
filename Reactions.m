@@ -70,7 +70,7 @@ dYdt(8)= 0;              % change in moles/cm3 of Solvent, S1;  This stays const
 dYdt(9)= 0;              % change in moles/cm3 of Solvent, S2;  S2 is not present.
 dYdt(11)=0;             % There  is no change in the total mass, i.e. Kilograms, of the reacting mixture.
 component_mass = dYdt(1:9).* Materials_Properties((1:9),1)/1e3;    		%   in kilograms
-component_volume = component_mass. /Materials_Properties((1:9),2);      		%   in m3.
+component_volume = component_mass./Materials_Properties((1:9),2);      		%   in m3.
 dYdt(12)= sum(component_volume(1:9));                                			% change in total volume, m3.
 %
 %   Formulate the Energy Balance for the Batch Reactor

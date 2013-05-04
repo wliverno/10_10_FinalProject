@@ -46,7 +46,8 @@ P=[-1; 1]; 		% The P(1)<0, P(2)>0 imply that heating is OFF and cooling is ON fo
 TimeVecHeatLength = length(TimeVecHeat);    	% Determine the length of the time vector
 TimeSpanCool = [X, X + TimeReactorCool];      	% Set the start and stop times of the cooling
 %   Set the initial conditions for the Period-2 to be the same as the final conditions of Period-1:
-Y0 = Y1(:, TimeVecHeatLength); 
+Y0 = Y1(TimeVecHeatLength, :);
+% TEST: disp(num2str(Y0));
 Y0=Y0';     
 %   Set conditions for ending integration when the temperature of the
 %   reactor's content has reached ReactorCoolTemp
@@ -55,7 +56,7 @@ OPTIONS=odeset('Events',@ReactorEvents); 	% Set for events to stop at ReactorCoo
 [TimeVecCool Y2]=ode45(@Reactions,TimeSpanCool,Y0,OPTIONS,P); % Integrate and use OPTIONS to stop integration
 %
 %   Collate the solutions of integration in Period-1 and Period-2.
-ReactorTimeVector= [TimeVecHeat, TimeVecCool]; 	% Form a single time vector of reactor heating and cooling
+ReactorTimeVector= [TimeVecHeat', TimeVecCool']; 	% Form a single time vector of reactor heating and cooling
 Y = [Y1; Y2]; % Form a single Y vector containing the molar amounts at times corresponding to tvec vector
 %
 %   Assign values to the vector, ReactorEffluent.  These values will become
@@ -68,15 +69,15 @@ k = length(ReactorTimeVector);
 %   Put the results of the dynamic simulation of the batch reactor into one
 %   variable, "reactor_effluent" and make it globally available.
 Reactor_dynamics = Y;
-Reactor_effluent = Y2(:, TimeVecCoolLength);
+Reactor_effluent = Y2(TimeVecCoolLength, :);
 %
 %   Compute the Economics of the Reactor per batch.
 %
 reaction_period = ReactionHeatingPeriod + TimeReactorCool;                                   			% in hours
 reactor_rental_cost = Reactor_rental_cost_per_hour * reaction_period * (1/3600);       	%  in $
-amount_of_heat_used = ReactorHeater * reactionPeriod * (1/3600);          		% in KJ
+amount_of_heat_used = ReactorHeater * reaction_period * (1/3600);          		% in KJ
 reactor_heating_cost = amount_of_heat_used * 3600 * Electricity_cost;    		%  in $ 
-amount_of_cooling_used = ReactorCool * reactionPeriod * (1/3600);       %    KJ
+amount_of_cooling_used = ReactorCool * reaction_period * (1/3600);       %    KJ
 reactor_cooling_cost = amount_of_cooling_used * Water_cooling_cost;       		%  in $
 reactor_stirrer_electricity_cost = ReactorStir * Electricity_cost * reaction_period * 3600;  	%  in $
 %
