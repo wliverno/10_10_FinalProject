@@ -1,8 +1,4 @@
 function ProcessUnitsParameters
-%
-%  10.10 Project.  Spring 2013.
-%  Prepared by George Stephanopoulos.
-%
 %   This function sets the parametric values for the various processing
 %   units in the process of the Project.  Makes these values available to
 %   other MatLab functions through the command, GLOBAL.
@@ -23,6 +19,7 @@ ReactorCool = 20;           % Reactor water cooling heat transfer coeficient, KW
 ReactorTurn = 3;            % Reactor turn around time, hr
 ReactorCoolTemp = 25;       % Temperature to which the reactor is to be cooled at the end of the batch
 TimeReactorCool = 2000;     % Time that the reactor cooling is on, seconds
+
 %   Set the parametetric values for the Batch Extractor
 %
 ExtractorVolume = 6;            % extractor filling volume in cubic meters (m3).
@@ -47,4 +44,8 @@ DryerTurn = 2;              % Dryer's turn around time, in hours.
 DryerHeatingPower = 1.5;    % Heating power of the dryer, in KW 
 %
 %   No parameters for the Waste Treatment system
+
+disp('Visited ProcessUnitsProperties')
+
+end
 

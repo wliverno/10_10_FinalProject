@@ -1,9 +1,4 @@
 function EconomicData
-%
-%
-%  10.10 Project.  Spring 2013.
-%  Prepared by George Stephanopoulos.
-%
 %  This function prepares the economic data and makes them available
 %  through global variables to all the routines that use them
 %
@@ -25,7 +20,7 @@ Overhead = 0.5;             % 50% overhead to the total production cost
 %
 %   Labor Cost
 Labor_unit_cost = 100;      % In $ per hour, including labor-associated overhead.
-%
+
 %   Utilities
 Water_cooling_cost = 0.0001;        % Cost of water cooling, $/kJ of heat removed
 Electricity_cost = 2.5;             %  Cost of electricity, $/kw-hr (used for heating and the stirrer)
@@ -54,3 +49,8 @@ Materials_Prices(9) = 30;           %  price of Solvent, S2, $/Kg
 %   Waste treatment Costs
 Liquid_waste_treatment_cost = 2;    %  $ per Kilogram of liquid waste
 Vapor_waste_treatment_cost = 0.5;   %  $ per Kilogram of vapor waste
+
+disp('Visited EconomicData')
+
+end
+

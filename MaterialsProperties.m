@@ -1,8 +1,4 @@
 function MaterialsProperties
-%
-%  10.10 Project.  Spring 2013.
-%  Prepared by George Stephanopoulos.
-%
 %   This function assigns the physical properties values of all the materials in the process onto the elements of a matrix, and makes the matrix available to all other functions as a GLOBAL variable.
 %   The name of the matrix is:  Materials_Properties(i,j).
 %       The first index signifies a material, i.e.
@@ -18,16 +14,14 @@ function MaterialsProperties
 %   Second index signifies specific property, i.e.
 %           j = 1, Molecular Weight of the material
 %           j = 2, Density of the material, Kg/m3
-%           j = 3, Heat Capacity of material,KJ/Kg,C
-%           j = 4, Heat of Vaporization of material,  
-                                            KJ/mole
+%           j = 3, Heat Capacity of material, `KJ/Kg,C
+%           j = 4, Heat of Vaporization of material, KJ/mole
 %           j = 5, Heat of Fusion of material, KJ/Kg
 %           j = 6, Boiling point, degrees Kelvin
 %   INPUT Global Variables.  None.
 %   OUTPUT Global Variables
 global  Materials_Properties %  This matrix contains the physical properties of all materials %
 %   Assign property values for the various materials
-%
 %   Chemical, A
 Materials_Properties(1,1) = 102;
 Materials_Properties(1,2) = 1030;
@@ -77,7 +71,6 @@ Materials_Properties(7,2) = 1010;
 Materials_Properties(7,3) = 2;
 Materials_Properties(7,4) = 100;
 Materials_Properties(7,6) = 450;
-%
 %   Reaction Solvent, S1
 Materials_Properties(8,1) = 76;
 Materials_Properties(8,2) = 1050;
@@ -91,3 +84,8 @@ Materials_Properties(9,2) = 868;
 Materials_Properties(9,3) = 2;
 Materials_Properties(9,4) = 200;
 Materials_Properties(9,6) = 490;
+
+disp('Visited MaterialsProperties')
+
+end
+
