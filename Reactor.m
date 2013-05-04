@@ -1,0 +1,111 @@
+function Reactor; 
+%
+%   
+%   Prepared by George Stephanopoulos.
+%
+%   This function simulates the performance of the Batch Reactor and computes its associated economics.
+%   It is called by the function "Simulator.m"
+% 
+% INPUT Global Variables
+global  ReactionHeatingPeriod    ReactorHeater 
+global  Reactor_feed     
+global  ReactorTurn  ReactorCool
+global  TimeReactorCool  ReactorCoolTemp   ReactorTurn  ReactorCool  ReactorStir
+global  Reactor_rental_cost_per_hour  Electricity_cost  Water_cooling_cost
+global  Labor_unit_cost  
+global  Materials_Prices
+global  Materials_Properties 
+%
+% OUTPUT Global Variables
+%
+global  ReactorTimeVector   Reactor_dynamics    Reactor_effluent  
+global  Materials_Costs  Utilities_Costs  Vessel_Rental_Costs  Labor_Costs   Materials_Credits
+global  Vessel_Occupancy
+%
+%   Set initial reactor parameters 
+%   
+X = ReactionHeatingPeriod;  	%  Sets the value of the reactor heating period
+Y0 = Reactor_feed;     	%  Sets the initial conditions to be equal to the conditions of the Reactor Feed
+P=[1; -1]; 		% The P(1)>0, P(2)<0 imply that heating is ON and cooling is OFF for the integrator.
+TimeSpanHeat = [0 X];  	% Set range of integration; from 0 until the heater is turned off.
+%
+%   Period-1 of Integration:
+%   Solve dynamic balance equations for the Batch Reactor (see equations in file, Reactions.m) 
+%   keeping the reactor heater ON and the reactor cooler OFF. 
+%
+[TimeVecHeat Y1] = ode45(@Reactions,TimeSpanHeat,Y0,[],P);      % Integrate
+%
+%   Turn off the heater and turn on the cooler
+P=[-1; 1]; 		% The P(1)<0, P(2)>0 imply that heating is OFF and cooling is ON for the integrator.
+%
+%   Period-2 of Integration:
+%   Solve dynamic balance equations for the Batch Reactor (see equations in file, Reactions.m) 
+%   keeping the reactor heater OFF and the reactor cooler ON.
+%
+%   Set the start and the end time-points of cooling
+TimeVecHeatLength = length(TimeVecHeat);    	% Determine the length of the time vector
+TimeSpanCool = [X, X + TimeReactorCool];      	% Set the start and stop times of the cooling
+%   Set the initial conditions for the Period-2 to be the same as the final conditions of Period-1:
+Y0 = Y1(:, TimeVecHeatLength); 
+Y0=Y0';     
+%   Set conditions for ending integration when the temperature of the
+%   reactor's content has reached ReactorCoolTemp
+OPTIONS=odeset('Events',@ReactorEvents); 	% Set for events to stop at ReactorCoolTemp
+%
+[TimeVecCool Y2]=ode45(@Reactions,TimeSpanCool,Y0,OPTIONS,P); % Integrate and use OPTIONS to stop integration
+%
+%   Collate the solutions of integration in Period-1 and Period-2.
+ReactorTimeVector= [TimeVecHeat, TimeVecCool]; 	% Form a single time vector of reactor heating and cooling
+Y = [Y1; Y2]; % Form a single Y vector containing the molar amounts at times corresponding to tvec vector
+%
+%   Assign values to the vector, ReactorEffluent.  These values will become
+%   available to other processing units, e.g. Batch Extractor, through a
+%   GLOBAL assignment.
+%
+TimeVecCoolLength=length(TimeVecCool); 	% Determine the length of the time vector from the integration
+k = length(ReactorTimeVector);
+%
+%   Put the results of the dynamic simulation of the batch reactor into one
+%   variable, "reactor_effluent" and make it globally available.
+Reactor_dynamics = Y;
+Reactor_effluent = Y2(:, TimeVecCoolLength);
+%
+%   Compute the Economics of the Reactor per batch.
+%
+reaction_period = ReactionHeatingPeriod + TimeReactorCool;                                   			% in hours
+reactor_rental_cost = Reactor_rental_cost_per_hour * reaction_period * (1/3600);       	%  in $
+amount_of_heat_used = ReactorHeater * reactionPeriod * (1/3600);          		% in KJ
+reactor_heating_cost = amount_of_heat_used * 3600 * Electricity_cost;    		%  in $ 
+amount_of_cooling_used = ReactorCool * reactionPeriod * (1/3600);       %    KJ
+reactor_cooling_cost = amount_of_cooling_used * Water_cooling_cost;       		%  in $
+reactor_stirrer_electricity_cost = ReactorStir * Electricity_cost * reaction_period * 3600;  	%  in $
+%
+%   Materials Cost
+reagents_materials_cost_A = Materials_Prices(1);
+reagents_materials_cost_B = Materials_Prices(2);
+catalyst_cost_C = Materials_Prices(7);
+solvent_cost_S1 = Materials_Prices(8);
+%
+product_value_from_P = Materials_Prices(3);
+product_value_from_Q = Materials_Prices(4);
+product_value_from_W = Materials_Prices(5); 
+product_value_from_Z = Materials_Prices(6);
+%
+%   Labor Cost 
+reactor_labor_cost = Labor_unit_cost; 		% in $
+%
+%   SUMMARY OF REACTOR ECONOMICS
+%
+Materials_Costs(1,1) = reagents_materials_cost_A ;  
+Materials_Costs(1,2) = reagents_materials_cost_B;  
+Materials_Costs(1,3) = catalyst_cost_C ;
+Materials_Costs(1,4) = solvent_cost_S1;
+Materials_Costs(1,5) = 0;	%  Cost of Solvent S2 (zero, because it is not present)
+Utilities_Costs(1,1) = reactor_heating_cost; 
+Utilities_Costs(1,2) = reactor_stirrer_electricity_cost;  
+Utilities_Costs(1,3) = reactor_cooling_cost;
+Utilities_Costs(1,(4:7)) = 0;                   		%  No steam heating, refrigeration cooling, fuel heating, or waste treatment cost
+Vessel_Rental_Costs(1) = reactor_rental_cost;
+Labor_Costs(1) = reactor_labor_cost;
+Materials_Credits(1,(1:5))= 0;
+Vessel_Occupancy(1) = reaction_period;    	%  Total occupancy time of the reactor vessel, per batch
