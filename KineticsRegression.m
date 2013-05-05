@@ -9,8 +9,11 @@ function [parameters] = KineticsRegression
 % Initial guesses
 parameters_0(1) = 2000; % Initial guess of the pre-exponential factor of the main reaction
 parameters_0(2) = 12000; % Initial guess of the pre-exponential factor of the main reaction
+parameters_0(3) = 0; % in order to increase MaxFunEvals
+parameters_0(4) = 0; % because MaxFunEvals = NumVars * 100
 % Call the MatLab function that carries out Non-Linear Least Squares estimates
-[parameters, resnorm] = lsqnonlin(@residuals, parameters_0, [1; 2000], [1e8; 40000],[optimset('Display','iter','TolFun', 1e-30)]); 
+[parameters, resnorm] = lsqnonlin(@residuals, parameters_0, [1; 2000], [1e8; 40000],[optimset('Display','iter','TolFun', 1e-30)]);
+% TEST:disp(num2str(parameters));
 % ***********************************************************************
 % ***********************************************************************
 function [residual] = residuals(parameters)

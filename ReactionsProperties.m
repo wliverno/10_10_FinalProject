@@ -20,10 +20,11 @@ global  Reactions_Properties  % This matrix contains the properties of the three
 %   Properties of the Main Reaction, Reaction-1
 %
 %   Estimate kinetic parameters for Reaction-1 through regression
-% [parameters] = KineticsRegression;  %  Use the "Kineticsregression" function to estimate the kinetic parameters
-% Reactions_Properties(1,1) = parameters(1); % Estimate of the pre-exponential constant, in:(cm3)^2/(second,(moles)^2)
-% Reactions_Properties(1,2) = parameters(2)/1000; %  estimate of the activation energy, in KJ/mole
+[parameters] = KineticsRegression;  %  Use the "Kineticsregression" function to estimate the kinetic parameters
+Reactions_Properties(1,1) = parameters(1); % Estimate of the pre-exponential constant, in:(cm3)^2/(second,(moles)^2)
+Reactions_Properties(1,2) = parameters(2)/1000; %  estimate of the activation energy, in KJ/mole
 Reactions_Properties(1,3) = 30;  %  in KJ/moles
+% TEST: disp(num2str(parameters));
 
 %   Properties of the First Side-Reaction, Reaction-2
 %

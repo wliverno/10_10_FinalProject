@@ -41,6 +41,7 @@ switch decision
 %
 %  Set the values of the Optimization Variables, which will be used by the Simulator.
     ReactorHeater = input('Enter output of Reactor Heater (in KW).  Suggested value: 500.  Reactor Heater Output = ');
+    ReactorHeater = ReactorHeater * 3600;
     disp('  ');
     ReactionHeatingPeriod = input('Enter Reactor Heating period (in seconds).  Suggested value: 1500 seconds.  Reactor heating period = ');
     disp('  ');

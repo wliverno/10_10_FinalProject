@@ -70,6 +70,13 @@ k = length(ReactorTimeVector);
 %   variable, "reactor_effluent" and make it globally available.
 Reactor_dynamics = Y;
 Reactor_effluent = Y2(TimeVecCoolLength, :);
+dimensionsY = size(Y);
+writeTime = zeros(dimensionsY(1),1);
+for i = 1:dimensionsY(1)
+    writeTime(i) = ReactorTimeVector(i);
+end
+% TEST:xlswrite('output', [ReactorTimeVector' , Y]);
+% TEST:plot(ReactorTimeVector, Y(:, 10)', '*r');
 %
 %   Compute the Economics of the Reactor per batch.
 %

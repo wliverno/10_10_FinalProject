@@ -60,7 +60,7 @@ rate(2) = Reaction2PreExp * exp(-Reaction2Eact/(R * T)) * (conc_P^2);           
 rate(3) = Reaction3PreExp * exp(-Reaction3Eact/(R * T)) * (conc_P^3);               	% Compute total rate of reaction 3
 %   Formulate the Material Balances for the Batch reactor
 dYdt(1)= -rate(1)*volcm;
-dYdt(2)= -2*rate(2)*volcm;
+dYdt(2)= -2*rate(1)*volcm;
 dYdt(3)= (rate(1) - (2*rate(2)) - (3*rate(3)))*volcm;
 dYdt(4)= 0.25*rate(1)*volcm;
 dYdt(5)= rate(2)*volcm;
@@ -92,7 +92,7 @@ if(P(1)>0)                              		% i.e. the reactor heater is on
 end
 %   If Reactor Water-Cooling system is ON and the Reactor Heater is OFF, then Qdot is given by the following equation.
 if(P(2)>0)                              
-    Qdot =  ReactorStir + (ReactorCool * (T - ReactorCoolTemp));   	% Add stirrer energy to cooler when it is on, KW
+    Qdot =  ReactorStir - (ReactorCool * (T - ReactorCoolTemp));   	% Add stirrer energy to cooler when it is on, KW
 end
 %
 %    Total heat rate produced by the three exothermic reactions
