@@ -1,0 +1,215 @@
+Visited MaterialsProperties
+Warning: Length of lower bounds is < length(x); filling in missing lower bounds with -Inf. 
+> In checkbounds at 34
+  In lsqnsetup at 63
+  In lsqnonlin at 177
+  In KineticsRegression at 15
+  In ReactionsProperties at 23
+  In Set_Parameters at 11
+  In Project_OLED_dyes at 23
+  In run at 64 
+Warning: Length of upper bounds is < length(x); filling in missing upper bounds with +Inf. 
+> In checkbounds at 48
+  In lsqnsetup at 63
+  In lsqnonlin at 177
+  In KineticsRegression at 15
+  In ReactionsProperties at 23
+  In Set_Parameters at 11
+  In Project_OLED_dyes at 23
+  In run at 64 
+
+                                         Norm of      First-order 
+ Iteration  Func-count     f(x)          step          optimality   CG-iterations
+     0          5     2.50259e-13                       9.7e-12
+     1         10     2.31205e-13             10       9.33e-12            0
+     2         15     1.85998e-13             20       1.02e-11            0
+     3         20     3.15885e-14             40       9.51e-12            0
+     4         25     4.13254e-15        14.4016       1.27e-13            0
+     5         30     3.60937e-15       0.747372       3.97e-13            0
+     6         35     3.60937e-15        83.4295       3.97e-13            0
+     7         40      2.6416e-15             20       1.23e-12            0
+     8         45     2.28927e-15        1.33163       1.91e-13            0
+     9         50     1.58916e-15             20       6.31e-13            0
+    10         55     1.47111e-15        0.75457       1.36e-13            0
+    11         60     1.29059e-15             40       9.08e-13            0
+    12         65     5.88359e-16        1.79926       5.41e-14            0
+    13         70     4.61468e-16             10       7.92e-14            0
+    14         75      2.9715e-16             20       1.57e-13            0
+    15         80     2.77551e-16       0.287165       3.46e-14            0
+    16         85     2.12723e-16             40        2.5e-13            0
+    17         90     9.65486e-17       0.684272       9.33e-15            0
+    18         95       7.806e-17        25.5122       6.37e-14            0
+    19        100     6.82977e-17       0.193792       6.41e-16            0
+    20        105     6.81338e-17          2.194       4.04e-16            0
+    21        110     6.81334e-17      0.0011949        1.5e-17            0
+    22        115     6.81334e-17      0.0467359       1.81e-19            0
+    23        120     6.81334e-17    0.000757844       8.38e-22            0
+    24        125     6.81334e-17    6.73451e-09       8.38e-22            0
+
+Local minimum possible.
+
+lsqnonlin stopped because the size of the current step is less than
+the default value of the step size tolerance.
+
+<stopping criteria details>
+
+Visited ReactionsProperties
+Visited ProcessUnitsProperties
+Visited EconomicData
+Visited ReactorFeed
+  
+  
+For interactive simulation type, 1.  For automatic optimization type, 2.  So, 1 or 2 ?? 2
+Visited Overall_Process_Economic_Objective
+ 
+ Iteration   Func-count     min f(x)         Procedure
+     0            1                1         
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+     1            4                1         initial simplex
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+     2            9                1         shrink
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+     3           14                1         shrink
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+     4           19                1         shrink
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+     5           24                1         shrink
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+     6           29                1         shrink
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+     7           34                1         shrink
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+     8           39                1         shrink
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+     9           44                1         shrink
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+    10           49                1         shrink
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+    11           54                1         shrink
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+    12           59                1         shrink
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+    13           64                1         shrink
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+    14           69                1         shrink
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+    15           74                1         shrink
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+    16           79                1         shrink
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+    17           84                1         shrink
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+    18           89                1         shrink
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+    19           94                1         shrink
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+Visited Overall_Process_Economic_Objective
+    20           99                1         shrink
+ 
+Optimization terminated:
+ the current x satisfies the termination criteria using OPTIONS.TolX of 1.000000e-04 
+ and F(X) satisfies the convergence criteria using OPTIONS.TolFun of 1.000000e-04 
+
+     
+    VALUES OF THE OPTIMIZATION VARIABLES
+ Reactor Heater Output (KW/hr)           =   100.000000
+ Reactor Heating Period (seconds)        =   1000.000000
+ Amount of Extraction Solvent, S1 (m3)   =   3.000000
+
+
+    TABLE OF PROCESS STREAMS PER BATCH OF PRODUCTION
+     
+Process Stream                   Moles, A   Moles, B    Moles, P     Moles, Q     Moles, W     Moles, Z      Moles, C     Moles, S1     Moles, S2    Temperature
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Reactor 
+      Feed                     323.4057     646.8114     0.0000       0.0000       0.0000       0.0000       78.8948      24717.3695        0.0000      298.00 
+      Effluent                 139.8222     279.6443   177.9110      45.8959       2.8361       0.0001       78.8948      24717.3695        0.0000      298.00 
+Extractor 
+Index exceeds matrix dimensions.
+
+Error in Results_Displayer (line 40)
+fprintf('      Fresh Solvent, S2        %8.4f     %8.4f   %8.4f     %8.4f     %8.4f     %8.4f      %8.4f
+%8.4f    %8.4f      %6.2f \n',Solvent_S2(1:10));
+
+Error in Project_OLED_dyes (line 94)
+Results_Displayer;
+
+Error in run (line 64)
+evalin('caller', [script ';']);
