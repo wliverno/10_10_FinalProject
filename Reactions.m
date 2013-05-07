@@ -1,7 +1,4 @@
 function dYdt=Reactions(t,Y,P)
-%
-%  
-%  Prepared by George Stephanopoulos.
 % 
 %   This function provides the values of the derivatives of the batch reactor mass and energy balances.
 %   It is called by the MatLab Integration routine,  ode45.m, from the function, Reactor.m
@@ -91,8 +88,9 @@ if(P(1)>0)                              		% i.e. the reactor heater is on
     Qdot = ReactorStir + (ReactorHeater / 3600);                   	% Add stirrer energy to heater energy, when heater is on, KW
 end
 %   If Reactor Water-Cooling system is ON and the Reactor Heater is OFF, then Qdot is given by the following equation.
+ReactorCoolTempK = ReactorCoolTemp + 273;
 if(P(2)>0)                              
-    Qdot =  ReactorStir - (ReactorCool * (T - ReactorCoolTemp));   	% Add stirrer energy to cooler when it is on, KW
+    Qdot =  ReactorStir - (ReactorCool * (T - ReactorCoolTempK));   	% Add stirrer energy to cooler when it is on, KW
 end
 %
 %    Total heat rate produced by the three exothermic reactions

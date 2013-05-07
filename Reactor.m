@@ -1,7 +1,4 @@
-function Reactor; 
-%
-%   
-%   Prepared by George Stephanopoulos.
+function Reactor
 %
 %   This function simulates the performance of the Batch Reactor and computes its associated economics.
 %   It is called by the function "Simulator.m"
@@ -70,41 +67,41 @@ k = length(ReactorTimeVector);
 %   variable, "reactor_effluent" and make it globally available.
 Reactor_dynamics = Y;
 Reactor_effluent = Y2(TimeVecCoolLength, :);
-dimensionsY = size(Y);
-writeTime = zeros(dimensionsY(1),1);
-for i = 1:dimensionsY(1)
-    writeTime(i) = ReactorTimeVector(i);
-end
+% dimensionsY = size(Y);
+% writeTime = zeros(dimensionsY(1),1);
+% for i = 1:dimensionsY(1)
+    % writeTime(i) = ReactorTimeVector(i);
+% end
 % TEST:xlswrite('output', [ReactorTimeVector' , Y]);
 % TEST:plot(ReactorTimeVector, Y(:, 10)', '*r');
 %
 %   Compute the Economics of the Reactor per batch.
 %
-reaction_period = ReactionHeatingPeriod + TimeReactorCool;                                   			% in hours
-reactor_rental_cost = Reactor_rental_cost_per_hour * reaction_period * (1/3600);       	%  in $
-amount_of_heat_used = ReactorHeater * reaction_period * (1/3600);          		% in KJ
-reactor_heating_cost = amount_of_heat_used * 3600 * Electricity_cost;    		%  in $ 
-amount_of_cooling_used = ReactorCool * reaction_period * (1/3600);       %    KJ
+reaction_period = ReactionHeatingPeriod + (TimeVecCool(end)-TimeVecCool(1));                                  			% in seconds
+reactor_rental_cost = Reactor_rental_cost_per_hour * (reaction_period*(1/3600) + ReactorTurn);       	%  in $
+amount_of_heat_used = ReactorHeater * reaction_period;          		% in KJ
+reactor_heating_cost = amount_of_heat_used * Electricity_cost;    		%  in $ 
+amount_of_cooling_used = ReactorCool * ((reaction_period*(1/3600)));       %    KJ
 reactor_cooling_cost = amount_of_cooling_used * Water_cooling_cost;       		%  in $
-reactor_stirrer_electricity_cost = ReactorStir * Electricity_cost * reaction_period * 3600;  	%  in $
+reactor_stirrer_electricity_cost = ReactorStir * Electricity_cost * (reaction_period*(1/3600) + ReactorTurn);  	%  in $
 %
 %   Materials Cost
-reagents_materials_cost_A = Materials_Prices(1);
-reagents_materials_cost_B = Materials_Prices(2);
-catalyst_cost_C = Materials_Prices(7);
-solvent_cost_S1 = Materials_Prices(8);
+reagents_materials_cost_A = Materials_Prices(1)*Reactor_feed_kilograms(1);
+reagents_materials_cost_B = Materials_Prices(2)*Reactor_feed_kilograms(2);
+catalyst_cost_C = Materials_Prices(7)*Reactor_feed_kilograms(7);
+solvent_cost_S1 = Materials_Prices(8)*Reactor_feed_kilograms(8);
 %
-product_value_from_P = Materials_Prices(3);
-product_value_from_Q = Materials_Prices(4);
-product_value_from_W = Materials_Prices(5); 
-product_value_from_Z = Materials_Prices(6);
+product_value_from_P = Materials_Prices(3)*Reactor_effluent(3);
+product_value_from_Q = Materials_Prices(4)*Reactor_effluent(4);
+product_value_from_W = Materials_Prices(5)*Reactor_effluent(5); 
+product_value_from_Z = Materials_Prices(6)*Reactor_effluent(6);
 %
 %   Labor Cost 
-reactor_labor_cost = Labor_unit_cost; 		% in $
+reactor_labor_cost = Labor_unit_cost*(reaction_period*(1/3600) + ReactorTurn); 		% in $
 %
 %   SUMMARY OF REACTOR ECONOMICS
 %
-Materials_Costs(1,1) = reagents_materials_cost_A ;  
+Materials_Costs(1,1) = reagents_materials_cost_A;  
 Materials_Costs(1,2) = reagents_materials_cost_B;  
 Materials_Costs(1,3) = catalyst_cost_C ;
 Materials_Costs(1,4) = solvent_cost_S1;
@@ -116,4 +113,4 @@ Utilities_Costs(1,(4:7)) = 0;                   		%  No steam heating, refrigera
 Vessel_Rental_Costs(1) = reactor_rental_cost;
 Labor_Costs(1) = reactor_labor_cost;
 Materials_Credits(1,(1:5))= 0;
-Vessel_Occupancy(1) = reaction_period;    	%  Total occupancy time of the reactor vessel, per batch
+Vessel_Occupancy(1) = reaction_period*(1/3600) + ReactorTurn;    	%  Total occupancy time of the reactor vessel, per batch
