@@ -27,7 +27,7 @@ Solvent_S2 = [0; 0; 0; 0; 0; 0; 0; 0; moles_solvent_S2; 298; mass_solvent_S2; vo
 %   Reactor Effluent
 %
 Extractor_feed = Reactor_effluent;
-Phase_1_initially = Extractor_feed;
+Phase_1_initially = Extractor_feed';
 Phase_2_initially = Solvent_S2;          %  This vector contains the molar amounts of all chemicals in S2
 volume_Phase_1 = Phase_1_initially(12);  %  in m3.
 volume_Phase_2 = volume_solvent_S2;      %  in m3.
@@ -50,27 +50,23 @@ EquilibriumConstants = [10; 8; 0; 0; 0; 0; 0; 0; 10];
 %
 K = EquilibriumConstants;
 volume_ratio = volume_Phase_2/volume_Phase_1;  % volume of phase-2 over volume of phase-1
-divider = volume_ratio * K + 1;
-moles_transferred(1:8) = volume_ratio.*K(1:8).*Reactor_effluent(1:8)./divider(1:8);  % moles of A,B,P,Q,W,Z,C,S1 transferred from phase-1 to phase-2
-moles_transferred(9) = Reactor_effluent(9)./divider(9);     % moles of S2 transferred from phase-2 to phase-1
+divider = volume_ratio .* K + 1;
+Reactor_effluentColumn = Reactor_effluent';
+moles_transferred = zeros(9,1);
+moles_transferred(1:8) = volume_ratio.*K(1:8).*Reactor_effluentColumn(1:8)./divider(1:8);  % moles of A,B,P,Q,W,Z,C,S1 transferred from phase-1 to phase-2
+moles_transferred(9) = Phase_2_initially(9)/divider(9);     % moles of S2 transferred from phase-2 to phase-1
 
 
 %   Number of Moles at equilibrium, at the end of the extraction
-Phase_1_equilibrium(1:8) = Reactor_effluent(1:8) - moles_transferred(1:8);   %  A, B, P, Q, W, Z, C, S1
-Phase_1_equilibrium(9) = Reactor_effluent(9) + moles_transferred(9);      %  S2
-Phase_2_equilibrium(1:8) = Reactor_effluent(1:8) + moles_transferred(1:8);    %  %  A, B, P, Q, W, Z, C, S1
-Phase_2_equilibrium(9) = Reactor_effluent(9) - moles_transferred(9);      %  S2
+Phase_1_equilibrium(1:8) = Phase_1_initially(1:8) - moles_transferred(1:8);   %  A, B, P, Q, W, Z, C, S1
+Phase_1_equilibrium(9) = Phase_1_initially(9) + moles_transferred(9);      %  S2
+Phase_2_equilibrium(1:8) = Phase_2_initially(1:8) + moles_transferred(1:8);    %  %  A, B, P, Q, W, Z, C, S1
+Phase_2_equilibrium(9) = Phase_2_initially(9) - moles_transferred(9);      %  S2
 %
 
 %   Specify the characteristics of the exiting two streams from the batch extractor
 Extractor_Phase_1_exit_stream(1:9) = Phase_1_equilibrium(1:9);  %  Assign amounts in moles to the Phase_1_exit_stream
 Extractor_Phase_2_exit_stream(1:9) = Phase_2_equilibrium(1:9);  %  Assign amounts in moles to the Phase_2_exit_stream 
-
-%   Compute total volume, in m3.
-component_volumes_1 = component_amounts_in_kilograms_1./Materials_Properties(1:9,2); % densities = Materials_Properties(1:9,2), in Kgs/m3
-Extractor_Phase_1_exit_stream(12) = sum(component_volumes_1);
-component_volumes_2 = component_amounts_in_kilograms_2./Materials_Properties(1:9,2); % densities = Materials_Properties(1:9,2), in Kgs/m3
-Extractor_Phase_2_exit_stream(12) = sum(component_volumes_2);
 
 %   Compute total masses in kilograms
 component_amounts_in_kilograms_1 = Extractor_Phase_1_exit_stream(1:9)'.*Materials_Properties(1:9,1)/1000;  
@@ -79,9 +75,15 @@ Extractor_Phase_1_exit_stream(11) = sum(component_amounts_in_kilograms_1);   % T
 component_amounts_in_kilograms_2 = Extractor_Phase_2_exit_stream(1:9)'.*Materials_Properties(1:9,1)/1000;         							% Kgs for each component
 Extractor_Phase_2_exit_stream(11) = sum(component_amounts_in_kilograms_2);   % Total mass, Kgs.
 
+%   Compute total volume, in m3.
+component_volumes_1 = component_amounts_in_kilograms_1./Materials_Properties(1:9,2); % densities = Materials_Properties(1:9,2), in Kgs/m3
+Extractor_Phase_1_exit_stream(12) = sum(component_volumes_1);
+component_volumes_2 = component_amounts_in_kilograms_2./Materials_Properties(1:9,2); % densities = Materials_Properties(1:9,2), in Kgs/m3
+Extractor_Phase_2_exit_stream(12) = sum(component_volumes_2);
+
 %   Compute the Extraction Time, hours
 volcm = 100^3; % Conversion factor from cm^3 to m^3
-extraction_period = (1.5e8/3600)*((Extractor_Phase_2_exit_stream(2)/(volcm*Extractor_Phase_2_exit_stream(12))) - (Reactor_effluent(2)/(volcm*Extractor_Phase_2_exit_stream(12))));
+extraction_period = (1.5e8/3600)*((moles_transferred(2)/(volcm*Extractor_Phase_2_exit_stream(12))));
 
 %   Assign temperatures
 heat_produced_by_stirrer = ExtractorStir*extraction_period*3600;  % heat input into the system by stirrer over the period of stirring
@@ -112,9 +114,6 @@ Vessel_Rental_Costs(2) = extractor_rental_cost ;
 Labor_Costs(2) = extractor_labor_cost;
 Materials_Credits(2,(1:5))= zeros(1,5);
 Vessel_Occupancy(2) = extraction_period + ExtractorTurn;                                                                      					%  Total occupancy time of the extractor vessel, per batch
-  
-disp('Visited Extractor')
-
 end
 
 

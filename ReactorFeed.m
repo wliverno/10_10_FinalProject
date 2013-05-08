@@ -5,7 +5,7 @@ function ReactorFeed
 global  Materials_Properties    %  Provided from the "Materials_Properties" function
 global  ReactorVolume           %  Provided from the "ProcessUnitsParameters" function  
 %   OUTPUT Global Variables
-global  Reactor_feed            %  Describes the composition, temperature, total mass, and volume of feed 
+global  Reactor_feed  Reactor_feed_kilograms          %  Describes the composition, temperature, total mass, and volume of feed 
 %
 %   Basic assumptions:
 %  (a)  Total Volume of Reacting Mixture = (Volume of Solvent,S1) + (Volume of A) + (Volume of B) + (Volume of C).

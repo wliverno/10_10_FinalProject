@@ -16,11 +16,11 @@ AmountSolvent_S2 = X(3);
 % Simulate the Process
 
 Reactor; %................   STEP-2(A)-1:  Simulate Batch Reactor
-% Extractor; %..............   STEP-2(A)-2:  Simulate the Batch Extractor
-% Distillation; %...........   STEP-2(A)-3:  Simulate the Batch Distillation
-% Crystallizer; %...........   STEP-2(A)-4:  Simulate the Batch Crystallizer
-% Dryer; %..................   STEP-2(A)-5:  Simulate the Batch Batch Dryer
-% Waste_Treatment; %........   STEP-2(A)-6:  Simulate the Waste Treatment Unit
+Extractor; %..............   STEP-2(A)-2:  Simulate the Batch Extractor
+Distillation; %...........   STEP-2(A)-3:  Simulate the Batch Distillation
+Crystallizer; %...........   STEP-2(A)-4:  Simulate the Batch Crystallizer
+Dryer; %..................   STEP-2(A)-5:  Simulate the Batch Batch Dryer
+Waste_Treatment; %........   STEP-2(A)-6:  Simulate the Waste Treatment Unit
 
 F = Overall_Process_Economic_Objective(X); %   STEP-2(A)-7:  Compute Process Economics
 end

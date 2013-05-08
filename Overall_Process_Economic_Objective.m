@@ -129,7 +129,7 @@ Annual_Production       = ((Crystal_phase_from_crystallizer(3)*Materials_Propert
 Annual_Income           = Annual_Production * Materials_Prices(3);
 Annual_Profit           = Profit_per_Kilogram_of_Product * Annual_Production;
 %
-F =  - Annual_Profit;   %  The Annual_Profit is our economic objective to maximized (or, its negative minimized)
+F =  -1 * Annual_Profit;   %  The Annual_Profit is our economic objective to maximized (or, its negative minimized)
 %
 
 end

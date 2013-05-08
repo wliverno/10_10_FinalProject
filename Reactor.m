@@ -12,6 +12,7 @@ global  Reactor_rental_cost_per_hour  Electricity_cost  Water_cooling_cost
 global  Labor_unit_cost  
 global  Materials_Prices
 global  Materials_Properties 
+global  Reactor_feed_kilograms
 %
 % OUTPUT Global Variables
 %
