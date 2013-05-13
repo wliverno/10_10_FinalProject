@@ -51,9 +51,8 @@ EquilibriumConstants = [10; 8; 0; 0; 0; 0; 0; 0; 10];
 K = EquilibriumConstants;
 volume_ratio = volume_Phase_2/volume_Phase_1;  % volume of phase-2 over volume of phase-1
 divider = volume_ratio .* K + 1;
-Reactor_effluentColumn = Reactor_effluent';
 moles_transferred = zeros(9,1);
-moles_transferred(1:8) = volume_ratio.*K(1:8).*Reactor_effluentColumn(1:8)./divider(1:8);  % moles of A,B,P,Q,W,Z,C,S1 transferred from phase-1 to phase-2
+moles_transferred(1:8) = volume_ratio.*K(1:8).*Phase_1_initially(1:8)./divider(1:8);  % moles of A,B,P,Q,W,Z,C,S1 transferred from phase-1 to phase-2
 moles_transferred(9) = Phase_2_initially(9)/divider(9);     % moles of S2 transferred from phase-2 to phase-1
 
 
@@ -88,15 +87,15 @@ extraction_period = (1.5e8/3600)*((moles_transferred(2)/(volcm*Extractor_Phase_2
 %   Assign temperatures
 heat_produced_by_stirrer = ExtractorStir*extraction_period*3600;  % heat input into the system by stirrer over the period of stirring
 total_mass_in_extractor = Extractor_Phase_1_exit_stream(11) + Extractor_Phase_2_exit_stream(11);
-temperature_rise_due_to_stirrer = heat_produced_by_stirrer/(total_mass_in_extractor * Materials_Properties(9,3));
-Extractor_Phase_1_exit_stream(10) = Extractor_feed(10) + temperature_rise_due_to_stirrer;
-Extractor_Phase_2_exit_stream(10) = Extractor_feed(10) + temperature_rise_due_to_stirrer;
+temperature_rise_due_to_stirrer = heat_produced_by_stirrer/(total_mass_in_extractor * Materials_Properties(9,3)); % degrees K
+Extractor_Phase_1_exit_stream(10) = Extractor_feed(10) + temperature_rise_due_to_stirrer; % degrees K
+Extractor_Phase_2_exit_stream(10) = Extractor_feed(10) + temperature_rise_due_to_stirrer; % degrees K
 %
 %   Compute the Economics of the Extractor per batch.
 %                                   
 %   Equipment rental cost
 extractor_rental_cost = (extraction_period + ExtractorTurn)*Extractor_rental_cost_per_hour;       %  in $
-extractor_stirrer_electricity_cost = (extraction_period + ExtractorTurn)*Electricity_cost*(ExtractorStir*3600); % in $
+extractor_stirrer_electricity_cost = (extraction_period + ExtractorTurn)*Electricity_cost*(ExtractorStir); % in $
 %
 %   Materials Cost
 solvent_cost_S2 = mass_solvent_S2*Materials_Prices(9);         % in $

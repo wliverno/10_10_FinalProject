@@ -1,0 +1,202 @@
+Visited MaterialsProperties
+Warning: Length of lower bounds is < length(x); filling in missing lower bounds with -Inf. 
+> In checkbounds at 34
+  In lsqnsetup at 63
+  In lsqnonlin at 177
+  In KineticsRegression at 15
+  In ReactionsProperties at 23
+  In Set_Parameters at 11
+  In Project_OLED_Dyes at 23
+  In run at 64 
+Warning: Length of upper bounds is < length(x); filling in missing upper bounds with +Inf. 
+> In checkbounds at 48
+  In lsqnsetup at 63
+  In lsqnonlin at 177
+  In KineticsRegression at 15
+  In ReactionsProperties at 23
+  In Set_Parameters at 11
+  In Project_OLED_Dyes at 23
+  In run at 64 
+
+                                         Norm of      First-order 
+ Iteration  Func-count     f(x)          step          optimality   CG-iterations
+     0          5     2.50259e-13                       9.7e-12
+     1         10     2.31205e-13             10       9.33e-12            0
+     2         15     1.85998e-13             20       1.02e-11            0
+     3         20     3.15885e-14             40       9.51e-12            0
+     4         25     4.13254e-15        14.4016       1.27e-13            0
+     5         30     3.60937e-15       0.747372       3.97e-13            0
+     6         35     3.60937e-15        83.4295       3.97e-13            0
+     7         40      2.6416e-15             20       1.23e-12            0
+     8         45     2.28927e-15        1.33163       1.91e-13            0
+     9         50     1.58916e-15             20       6.31e-13            0
+    10         55     1.47111e-15        0.75457       1.36e-13            0
+    11         60     1.29059e-15             40       9.08e-13            0
+    12         65     5.88359e-16        1.79926       5.41e-14            0
+    13         70     4.61468e-16             10       7.92e-14            0
+    14         75      2.9715e-16             20       1.57e-13            0
+    15         80     2.77551e-16       0.287165       3.46e-14            0
+    16         85     2.12723e-16             40        2.5e-13            0
+    17         90     9.65486e-17       0.684272       9.33e-15            0
+    18         95       7.806e-17        25.5122       6.37e-14            0
+    19        100     6.82977e-17       0.193792       6.41e-16            0
+    20        105     6.81338e-17          2.194       4.04e-16            0
+    21        110     6.81334e-17      0.0011949        1.5e-17            0
+    22        115     6.81334e-17      0.0467359       1.81e-19            0
+    23        120     6.81334e-17    0.000757844       8.38e-22            0
+    24        125     6.81334e-17    6.73451e-09       8.38e-22            0
+
+Local minimum possible.
+
+lsqnonlin stopped because the size of the current step is less than
+the default value of the step size tolerance.
+
+<stopping criteria details>
+
+2422201.3524      11.801517118
+Visited ReactionsProperties
+Visited ProcessUnitsProperties
+Visited EconomicData
+Visited ReactorFeed
+  
+  
+For interactive simulation type, 1.  For automatic optimization type, 2.  So, 1 or 2 ?? 1
+  
+  
+Enter output of Reactor Heater (in KW).  Suggested value: 500.  Reactor Heater Output = 500
+  
+Enter Reactor Heating period (in seconds).  Suggested value: 1500 seconds.  Reactor heating period = 1500
+  
+Enter volume of extraction Solvent, S2 (in m3).  Suggested value: 3.5 m3.  Volume of Solvent, S2 = 3.5
+  
+  
+  
+     
+    VALUES OF THE OPTIMIZATION VARIABLES
+ Reactor Heater Output (KW)              =   500.000000
+ Reactor Heating Period (seconds)        =   1500.000000
+ Amount of Extraction Solvent, S1 (m3)   =   3.500000
+
+
+    TABLE OF PROCESS STREAMS PER BATCH OF PRODUCTION
+     
+Process Stream                   Moles, A   Moles, B    Moles, P     Moles, Q     Moles, W     Moles, Z      Moles, C     Moles, S1     Moles, S2    Temperature
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Reactor 
+      Feed                     323.4057     646.8114     0.0000       0.0000       0.0000       0.0000       78.8948      24717.3695        0.0000      298.00 
+      Effluent                  64.5549     129.1098   175.7953      64.7127      41.5249       0.0019       78.8948      24717.3695        0.0000      299.08 
+Extractor 
+      Fresh Solvent, S2          0.0000       0.0000     0.0000       0.0000       0.0000       0.0000        0.0000          0.0000    17870.5882      298.00 
+      Solvent,S1-Phase           3.4635       8.5440   175.7953      64.7127      41.5249       0.0019       78.8948      24717.3695      958.7818      301.73 
+      Solvent,S2-Phase          61.0914     120.5658     0.0000       0.0000       0.0000       0.0000        0.0000          0.0000    16911.8065      301.73 
+Distillation 
+      Overhead                  61.0914     120.5658     0.0000       0.0000       0.0000       0.0000        0.0000          0.0000        1.8166      298.00 
+      Bottoms                    0.0000       0.0000     0.0000       0.0000       0.0000       0.0000        0.0000          0.0000    16909.9899      458.00 
+Crystallizer 
+      Crystal-Phase, Solid       0.0000       0.0000   158.2157       0.0000       0.0000       0.0000        0.0000          0.0000        0.0000      263.00 
+      Crystal-Phase, Liquid      0.0118       0.0291     0.0599       0.2206       0.1415       0.0000        0.2689         84.2549      3.268231      263.00 
+      Liquid-Phase               3.4517       8.5149    17.5196      64.4921      41.3834       0.0019       78.6258      24633.1146      955.5135      263.00 
+Dryer 
+      Crystal-Phase(pure)        0.0000       0.0000   158.2157       0.0000       0.0000       0.0000        0.0000          0.0000        0.0000      520.00 
+      Vapor-Phase                0.0118       0.0291     0.0599       0.2206       0.1415       0.0000        0.2689         84.2549        3.2682      520.00 
+
+
+     
+     
+    NET UTILIZATION OF MATERIALS PER BATCH
+---------------------------------------------------
+Reagent, A (kg) =    26.7561
+Reagent, B (kg) =    86.0412
+Catalyst, C (kg) =    32.3468
+Solvent, S1 (kg) =   1878.5201
+Solvent, S2 (kg) =   163.3017
+     
+     
+    AMOUNT OF PRODUCT PRODUCED
+---------------------------------------------------
+Product, P (kg) =    72.6210     
+     
+    TABLE OF PROCESS ECONOMICS PER BATCH OF PRODUCTION
+     
+MATERIALS COST          Reactor      Extractor      Distillation     Crystallizer       Dryer        Waste Treatment
+------------------------------------------------------------------------------------------------------------------------------------
+Reagent, A             16493.69         0.00            0.00             0.00            0.00              0.00  
+Reagent, B            211507.33         0.00            0.00             0.00            0.00              0.00  
+Catalyst, C            32346.85         0.00            0.00             0.00            0.00              0.00  
+Solvent, S1            18785.20         0.00            0.00             0.00            0.00              0.00  
+Solvent, S2                0.00     91140.00            0.00             0.00            0.00              0.00  
+------------------------------------------------------------------------------------------------------------------------------------
+    
+TOTAL MATERIALS COST ($ per batch) =  370273.07
+    
+    
+UTILITIES COST            Reactor      Extractor      Distillation     Crystallizer       Dryer        Waste Treatment
+------------------------------------------------------------------------------------------------------------------------------------
+Electricity-Heat           520.83         0.00            0.00             0.00            0.00              0.00  
+Electricity-Stir            49.65        43.77            0.00           106.70            0.00              0.00  
+Water Cooling              349.01         0.00          247.64             0.00            0.00              0.00  
+Steam Heating                0.00         0.00        129460.21             0.00            0.00              0.00  
+Refrigerant Cooling          0.00         0.00            0.00          4097.43            0.00              0.00  
+Fuel Heating-Dryer           0.00         0.00            0.00             0.00         2446.42              0.00  
+Waste Treatment              0.00         0.00            0.00             0.00            0.00           5307.95  
+------------------------------------------------------------------------------------------------------------------------------------
+    
+TOTAL UTILITIES COST ($ per batch) =  169169.34
+    
+    
+   LABOR COSTS PER BATCH
+    
+                     Reactor      Extractor      Distillation     Crystallizer       Dryer        Waste Treatment
+------------------------------------------------------------------------------------------------------------------------------------
+Labor Cost            397.22       350.15          390.83          1622.72          653.04              0.00  
+------------------------------------------------------------------------------------------------------------------------------------
+    
+TOTAL LABOR COST ($ per batch) =    3413.96
+    
+    
+   RENTAL COSTS PER BATCH
+    
+                       Reactor      Extractor      Distillation     Crystallizer       Dryer        Waste Treatment
+------------------------------------------------------------------------------------------------------------------------------------
+Rental Cost           11916.67     10504.57        23449.72         81135.98        19591.20              0.00  
+------------------------------------------------------------------------------------------------------------------------------------
+    
+TOTAL RENTAL COSTS ($ per batch) =  146598.13
+    
+    
+          **TOTAL OPERATING COST PER BATCH ($) =  689454.51
+    
+    
+   MATERIALS CREDITS PER BATCH
+    
+                          Reactor      Extractor      Distillation     Crystallizer       Dryer        Waste Treatment
+------------------------------------------------------------------------------------------------------------------------------------
+Recovered, A                 0.00         0.00         3115.66             0.00            0.00              0.00  
+Recovered, B                 0.00         0.00        39425.00             0.00            0.00              0.00  
+Recovered, S2                0.00         0.00        86240.95             0.00            0.00              0.00  
+------------------------------------------------------------------------------------------------------------------------------------
+    
+TOTAL MATERIALS CREDITS PER BATCH ($) =  128781.61
+    
+    
+          **NET OPERATING COST PER BATCH ($) = 1121345.79
+    
+    
+          **COST PER KILOGRAM, P ($/kg) =   15441.06
+    
+    
+          **PROFIT PER KILOGRAM, P ($/kg) =    4558.94
+     
+     
+    SUMMARY OF PROCESS ECONOMICS ON AN ANNUAL BASIS
+       (in $ for a 4000 hours Annual Operation)
+-------------------------------------------------------
+NUMBER OF BATCHES PER YEAR =		246.4998
+ANNUAL PRODUCTION OF P (kg) =		17901.0672
+MATERIAL COST (net, $) =		59527590.2488
+UTILITIES COST ($) =			41700205.0763
+LABOR COST ($) =			841541.0611
+EQUIPMENT "RENTAL" COST ($) =		36136406.7076
+NET OPERATING COST ($) =		276411486.1876
+ANNUAL INCOME ($) =			358021343.3032
+OPERATING PROFIT ($) =			81609857.1156

@@ -24,7 +24,7 @@ global  Reactions_Properties  % This matrix contains the properties of the three
 Reactions_Properties(1,1) = parameters(1); % Estimate of the pre-exponential constant, in:(cm3)^2/(second,(moles)^2)
 Reactions_Properties(1,2) = parameters(2)/1000; %  estimate of the activation energy, in KJ/mole
 Reactions_Properties(1,3) = 30;  %  in KJ/moles
-% TEST: disp(num2str(parameters));
+disp(num2str(Reactions_Properties));
 
 %   Properties of the First Side-Reaction, Reaction-2
 %

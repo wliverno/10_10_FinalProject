@@ -1,0 +1,406 @@
+Visited MaterialsProperties
+Warning: Length of lower bounds is < length(x); filling in missing lower bounds with -Inf. 
+> In checkbounds at 34
+  In lsqnsetup at 63
+  In lsqnonlin at 177
+  In KineticsRegression at 15
+  In ReactionsProperties at 23
+  In Set_Parameters at 11
+  In Project_OLED_Dyes at 23
+  In run at 64 
+Warning: Length of upper bounds is < length(x); filling in missing upper bounds with +Inf. 
+> In checkbounds at 48
+  In lsqnsetup at 63
+  In lsqnonlin at 177
+  In KineticsRegression at 15
+  In ReactionsProperties at 23
+  In Set_Parameters at 11
+  In Project_OLED_Dyes at 23
+  In run at 64 
+
+                                         Norm of      First-order 
+ Iteration  Func-count     f(x)          step          optimality   CG-iterations
+     0          5     2.50259e-13                       9.7e-12
+     1         10     2.31205e-13             10       9.33e-12            0
+     2         15     1.85998e-13             20       1.02e-11            0
+     3         20     3.15885e-14             40       9.51e-12            0
+     4         25     4.13254e-15        14.4016       1.27e-13            0
+     5         30     3.60937e-15       0.747372       3.97e-13            0
+     6         35     3.60937e-15        83.4295       3.97e-13            0
+     7         40      2.6416e-15             20       1.23e-12            0
+     8         45     2.28927e-15        1.33163       1.91e-13            0
+     9         50     1.58916e-15             20       6.31e-13            0
+    10         55     1.47111e-15        0.75457       1.36e-13            0
+    11         60     1.29059e-15             40       9.08e-13            0
+    12         65     5.88359e-16        1.79926       5.41e-14            0
+    13         70     4.61468e-16             10       7.92e-14            0
+    14         75      2.9715e-16             20       1.57e-13            0
+    15         80     2.77551e-16       0.287165       3.46e-14            0
+    16         85     2.12723e-16             40        2.5e-13            0
+    17         90     9.65486e-17       0.684272       9.33e-15            0
+    18         95       7.806e-17        25.5122       6.37e-14            0
+    19        100     6.82977e-17       0.193792       6.41e-16            0
+    20        105     6.81338e-17          2.194       4.04e-16            0
+    21        110     6.81334e-17      0.0011949        1.5e-17            0
+    22        115     6.81334e-17      0.0467359       1.81e-19            0
+    23        120     6.81334e-17    0.000757844       8.38e-22            0
+    24        125     6.81334e-17    6.73451e-09       8.38e-22            0
+
+Local minimum possible.
+
+lsqnonlin stopped because the size of the current step is less than
+the default value of the step size tolerance.
+
+<stopping criteria details>
+
+2422201.3524      11.801517118
+Visited ReactionsProperties
+Visited ProcessUnitsProperties
+Visited EconomicData
+Visited ReactorFeed
+  
+  
+For interactive simulation type, 1.  For automatic optimization type, 2.  So, 1 or 2 ?? 2
+ 
+ Iteration   Func-count     min f(x)         Procedure
+     0            1     -1.49218e+08         
+     1            4     -1.49218e+08         initial simplex
+     2            6     -1.50752e+08         expand
+     3            7     -1.50752e+08         reflect
+     4            9     -1.51885e+08         expand
+     5           10     -1.51885e+08         reflect
+     6           11     -1.51885e+08         reflect
+     7           13     -1.51885e+08         contract outside
+     8           15     -1.52172e+08         reflect
+     9           17     -1.52172e+08         contract inside
+    10           18     -1.52172e+08         reflect
+    11           20     -1.52393e+08         expand
+    12           22     -1.52466e+08         reflect
+    13           24     -1.52555e+08         reflect
+    14           26      -1.5274e+08         reflect
+    15           28      -1.5279e+08         reflect
+    16           29      -1.5279e+08         reflect
+    17           31     -1.53151e+08         expand
+    18           32     -1.53151e+08         reflect
+    19           33     -1.53151e+08         reflect
+    20           35     -1.53336e+08         reflect
+    21           36     -1.53336e+08         reflect
+    22           38     -1.53336e+08         contract inside
+    23           39     -1.53336e+08         reflect
+    24           41     -1.53336e+08         contract inside
+    25           42     -1.53336e+08         reflect
+    26           43     -1.53336e+08         reflect
+    27           44     -1.53336e+08         reflect
+    28           45     -1.53336e+08         reflect
+    29           47     -1.53389e+08         reflect
+    30           49     -1.53389e+08         contract inside
+    31           51     -1.53389e+08         contract outside
+    32           52     -1.53389e+08         reflect
+    33           54     -1.53422e+08         expand
+    34           55     -1.53422e+08         reflect
+    35           57     -1.53422e+08         contract outside
+    36           59     -1.53504e+08         expand
+    37           60     -1.53504e+08         reflect
+    38           61     -1.53504e+08         reflect
+    39           63     -1.53658e+08         expand
+    40           64     -1.53658e+08         reflect
+    41           65     -1.53658e+08         reflect
+    42           67     -1.53947e+08         expand
+    43           68     -1.53947e+08         reflect
+    44           70      -1.5423e+08         expand
+    45           72     -1.54476e+08         reflect
+    46           74       -1.547e+08         reflect
+    47           76       -1.547e+08         contract inside
+    48           78       -1.547e+08         contract inside
+    49           80       -1.547e+08         contract inside
+    50           82       -1.547e+08         contract inside
+    51           84       -1.547e+08         contract inside
+    52           85       -1.547e+08         reflect
+    53           87       -1.547e+08         contract inside
+    54           89       -1.547e+08         contract inside
+    55           91       -1.547e+08         contract inside
+    56           93       -1.547e+08         contract inside
+    57           95       -1.547e+08         contract inside
+    58           97     -1.54734e+08         reflect
+    59           99     -1.54734e+08         contract inside
+    60          101     -1.54734e+08         contract inside
+    61          102     -1.54734e+08         reflect
+    62          104     -1.54735e+08         reflect
+    63          106     -1.54735e+08         contract inside
+    64          108     -1.54735e+08         contract inside
+    65          110     -1.54735e+08         contract inside
+    66          112     -1.54743e+08         reflect
+    67          114     -1.54743e+08         contract inside
+    68          116     -1.54743e+08         contract inside
+    69          118     -1.54743e+08         contract inside
+    70          120     -1.54743e+08         contract inside
+    71          122     -1.54743e+08         contract inside
+    72          123     -1.54743e+08         reflect
+    73          125     -1.54743e+08         contract inside
+    74          127     -1.54743e+08         contract inside
+    75          129     -1.54743e+08         contract inside
+    76          131     -1.54743e+08         contract inside
+    77          133     -1.54743e+08         contract inside
+    78          135     -1.54743e+08         contract inside
+    79          137     -1.54743e+08         contract inside
+    80          138     -1.54743e+08         reflect
+    81          139     -1.54743e+08         reflect
+    82          141     -1.54743e+08         contract inside
+    83          143     -1.54743e+08         contract inside
+    84          145     -1.54743e+08         contract inside
+    85          147     -1.54743e+08         contract inside
+    86          149     -1.54743e+08         contract inside
+    87          151     -1.54743e+08         contract inside
+    88          152     -1.54743e+08         reflect
+    89          154     -1.54743e+08         contract inside
+    90          156     -1.54743e+08         reflect
+    91          158     -1.54743e+08         contract inside
+    92          160     -1.54743e+08         contract inside
+    93          162     -1.54743e+08         reflect
+    94          164     -1.54743e+08         contract inside
+    95          166     -1.54743e+08         contract inside
+    96          168     -1.54743e+08         contract inside
+    97          170     -1.54743e+08         contract inside
+    98          171     -1.54743e+08         reflect
+    99          173     -1.54743e+08         contract inside
+   100          175     -1.54743e+08         contract outside
+   101          176     -1.54743e+08         reflect
+   102          178     -1.54743e+08         reflect
+   103          180     -1.54743e+08         contract inside
+   104          182     -1.54743e+08         contract inside
+   105          184     -1.54743e+08         reflect
+   106          186     -1.54743e+08         contract inside
+   107          188     -1.54743e+08         contract inside
+   108          190     -1.54743e+08         contract inside
+   109          192     -1.54743e+08         contract inside
+   110          194     -1.54743e+08         contract inside
+   111          195     -1.54743e+08         reflect
+   112          197     -1.54743e+08         contract inside
+   113          199     -1.54743e+08         expand
+   114          201     -1.54743e+08         contract inside
+   115          202     -1.54743e+08         reflect
+   116          203     -1.54743e+08         reflect
+   117          205     -1.54743e+08         expand
+   118          207     -1.54743e+08         contract inside
+   119          209     -1.54743e+08         contract inside
+   120          211     -1.54743e+08         contract inside
+   121          213     -1.54743e+08         contract inside
+   122          215     -1.54743e+08         reflect
+   123          217     -1.54743e+08         contract inside
+   124          219     -1.54743e+08         contract inside
+   125          220     -1.54743e+08         reflect
+   126          222     -1.54743e+08         reflect
+   127          224     -1.54743e+08         contract inside
+   128          226     -1.54743e+08         contract inside
+   129          228     -1.54743e+08         contract inside
+   130          230     -1.54743e+08         reflect
+   131          232     -1.54743e+08         contract inside
+   132          234     -1.54743e+08         contract inside
+   133          235     -1.54743e+08         reflect
+   134          236     -1.54743e+08         reflect
+   135          238     -1.54743e+08         reflect
+   136          240     -1.54743e+08         contract inside
+   137          242     -1.54743e+08         contract inside
+   138          244     -1.54743e+08         contract inside
+   139          246     -1.54743e+08         expand
+   140          248     -1.54743e+08         contract inside
+   141          250     -1.54743e+08         contract outside
+   142          252     -1.54743e+08         contract inside
+   143          253     -1.54743e+08         reflect
+   144          255     -1.54743e+08         reflect
+   145          257     -1.54743e+08         contract inside
+   146          259     -1.54743e+08         contract inside
+   147          260     -1.54743e+08         reflect
+   148          262     -1.54743e+08         reflect
+   149          264     -1.54743e+08         contract inside
+   150          266     -1.54743e+08         contract inside
+   151          268     -1.54743e+08         reflect
+   152          269     -1.54743e+08         reflect
+   153          271     -1.54743e+08         contract inside
+   154          273     -1.54743e+08         reflect
+   155          275     -1.54743e+08         contract inside
+   156          277     -1.54743e+08         contract inside
+   157          279     -1.54743e+08         contract inside
+   158          281     -1.54743e+08         contract outside
+   159          282     -1.54743e+08         reflect
+   160          284     -1.54743e+08         contract inside
+   161          286     -1.54743e+08         contract inside
+   162          288     -1.54743e+08         contract inside
+   163          290     -1.54743e+08         contract inside
+   164          292     -1.54743e+08         contract inside
+   165          294     -1.54743e+08         contract inside
+   166          296     -1.54743e+08         contract inside
+   167          298     -1.54743e+08         reflect
+   168          300     -1.54743e+08         contract inside
+   169          302     -1.54743e+08         contract inside
+   170          304     -1.54743e+08         reflect
+   171          306     -1.54743e+08         contract inside
+   172          308     -1.54743e+08         contract inside
+   173          310     -1.54743e+08         contract inside
+   174          312     -1.54743e+08         contract inside
+   175          314     -1.54743e+08         contract inside
+   176          316     -1.54743e+08         contract inside
+   177          318     -1.54743e+08         contract inside
+   178          319     -1.54743e+08         reflect
+   179          321     -1.54743e+08         expand
+   180          323     -1.54743e+08         expand
+   181          325     -1.54743e+08         contract inside
+   182          326     -1.54743e+08         reflect
+   183          328     -1.54743e+08         reflect
+   184          330     -1.54743e+08         reflect
+   185          332     -1.54743e+08         contract inside
+   186          334     -1.54743e+08         reflect
+   187          336     -1.54743e+08         contract inside
+   188          337     -1.54743e+08         reflect
+   189          339     -1.54743e+08         contract outside
+   190          341     -1.54743e+08         reflect
+   191          342     -1.54743e+08         reflect
+   192          343     -1.54743e+08         reflect
+   193          345     -1.54743e+08         contract inside
+   194          347     -1.54743e+08         reflect
+   195          348     -1.54743e+08         reflect
+   196          350     -1.54743e+08         contract inside
+   197          352     -1.54743e+08         contract inside
+   198          353     -1.54743e+08         reflect
+   199          355     -1.54743e+08         expand
+   200          357     -1.54743e+08         contract inside
+   201          359     -1.54743e+08         contract inside
+   202          361     -1.54743e+08         contract inside
+   203          362     -1.54743e+08         reflect
+   204          364     -1.54743e+08         reflect
+   205          366     -1.54743e+08         contract inside
+   206          371     -1.54743e+08         shrink
+ 
+Optimization terminated:
+ the current x satisfies the termination criteria using OPTIONS.TolX of 1.000000e-04 
+ and F(X) satisfies the convergence criteria using OPTIONS.TolFun of 1.000000e-04 
+
+     
+    VALUES OF THE OPTIMIZATION VARIABLES
+ Reactor Heater Output (KW)              =   0.000000
+ Reactor Heating Period (seconds)        =   1099.229043
+ Amount of Extraction Solvent, S1 (m3)   =   2.267171
+
+
+    TABLE OF PROCESS STREAMS PER BATCH OF PRODUCTION
+     
+Process Stream                   Moles, A   Moles, B    Moles, P     Moles, Q     Moles, W     Moles, Z      Moles, C     Moles, S1     Moles, S2    Temperature
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Reactor 
+      Feed                     323.4057     646.8114     0.0000       0.0000       0.0000       0.0000       78.8948      24717.3695        0.0000      298.00 
+      Effluent                  84.9995     169.9991   206.4214      59.6015      15.9912       0.0008       78.8948      24717.3695        0.0000      298.25 
+Extractor 
+      Fresh Solvent, S2          0.0000       0.0000     0.0000       0.0000       0.0000       0.0000        0.0000          0.0000    11575.9078      298.00 
+      Solvent,S1-Phase           6.8445      16.7736   206.4214      59.6015      15.9912       0.0008       78.8948      24717.3695      932.1397      304.95 
+      Solvent,S2-Phase          78.1550     153.2255     0.0000       0.0000       0.0000       0.0000        0.0000          0.0000    10643.7681      304.95 
+Distillation 
+      Overhead                  78.1550     153.2255     0.0000       0.0000       0.0000       0.0000        0.0000          0.0000        2.3138      298.00 
+      Bottoms                    0.0000       0.0000     0.0000       0.0000       0.0000       0.0000        0.0000          0.0000    10641.4543      458.00 
+Crystallizer 
+      Crystal-Phase, Solid       0.0000       0.0000   185.7793       0.0000       0.0000       0.0000        0.0000          0.0000        0.0000      263.00 
+      Crystal-Phase, Liquid      0.0277       0.0680     0.0836       0.2415       0.0648       0.0000        0.3196        100.1346      3.776268      263.00 
+      Liquid-Phase               6.8168      16.7057    20.5585      59.3601      15.9264       0.0008       78.5751      24617.2349      928.3635      263.00 
+Dryer 
+      Crystal-Phase(pure)        0.0000       0.0000   185.7793       0.0000       0.0000       0.0000        0.0000          0.0000        0.0000      520.00 
+      Vapor-Phase                0.0277       0.0680     0.0836       0.2415       0.0648       0.0000        0.3196        100.1346        3.7763      520.00 
+
+
+     
+     
+    NET UTILIZATION OF MATERIALS PER BATCH
+---------------------------------------------------
+Reagent, A (kg) =    25.0156
+Reagent, B (kg) =    80.7013
+Catalyst, C (kg) =    32.3468
+Solvent, S1 (kg) =   1878.5201
+Solvent, S2 (kg) =   158.8571
+     
+     
+    AMOUNT OF PRODUCT PRODUCED
+---------------------------------------------------
+Product, P (kg) =    85.2727     
+     
+    TABLE OF PROCESS ECONOMICS PER BATCH OF PRODUCTION
+     
+MATERIALS COST          Reactor      Extractor      Distillation     Crystallizer       Dryer        Waste Treatment
+------------------------------------------------------------------------------------------------------------------------------------
+Reagent, A             16493.69         0.00            0.00             0.00            0.00              0.00  
+Reagent, B            211507.33         0.00            0.00             0.00            0.00              0.00  
+Catalyst, C            32346.85         0.00            0.00             0.00            0.00              0.00  
+Solvent, S1            18785.20         0.00            0.00             0.00            0.00              0.00  
+Solvent, S2                0.00     59037.13            0.00             0.00            0.00              0.00  
+------------------------------------------------------------------------------------------------------------------------------------
+    
+TOTAL MATERIALS COST ($ per batch) =  338170.20
+    
+    
+UTILITIES COST            Reactor      Extractor      Distillation     Crystallizer       Dryer        Waste Treatment
+------------------------------------------------------------------------------------------------------------------------------------
+Electricity-Heat             0.00         0.00            0.00             0.00            0.00              0.00  
+Electricity-Stir            48.26        62.52            0.00           115.83            0.00              0.00  
+Water Cooling                1.55         0.00          156.77             0.00            0.00              0.00  
+Steam Heating                0.00         0.00        81788.16             0.00            0.00              0.00  
+Refrigerant Cooling          0.00         0.00            0.00          4447.73            0.00              0.00  
+Fuel Heating-Dryer           0.00         0.00            0.00             0.00         2885.84              0.00  
+Waste Treatment              0.00         0.00            0.00             0.00            0.00           5240.89  
+------------------------------------------------------------------------------------------------------------------------------------
+    
+TOTAL UTILITIES COST ($ per batch) =  120952.00
+    
+    
+   LABOR COSTS PER BATCH
+    
+                     Reactor      Extractor      Distillation     Crystallizer       Dryer        Waste Treatment
+------------------------------------------------------------------------------------------------------------------------------------
+Labor Cost            386.09       500.14          415.69          1744.35          734.41              0.00  
+------------------------------------------------------------------------------------------------------------------------------------
+    
+TOTAL LABOR COST ($ per batch) =    3780.69
+    
+    
+   RENTAL COSTS PER BATCH
+    
+                       Reactor      Extractor      Distillation     Crystallizer       Dryer        Waste Treatment
+------------------------------------------------------------------------------------------------------------------------------------
+Rental Cost           11582.69     15004.18        24941.41         87217.57        22032.44              0.00  
+------------------------------------------------------------------------------------------------------------------------------------
+    
+TOTAL RENTAL COSTS ($ per batch) =  160778.30
+    
+    
+          **TOTAL OPERATING COST PER BATCH ($) =  623681.19
+    
+    
+   MATERIALS CREDITS PER BATCH
+    
+                          Reactor      Extractor      Distillation     Crystallizer       Dryer        Waste Treatment
+------------------------------------------------------------------------------------------------------------------------------------
+Recovered, A                 0.00         0.00         3985.91             0.00            0.00              0.00  
+Recovered, B                 0.00         0.00        50104.73             0.00            0.00              0.00  
+Recovered, S2                0.00         0.00        54271.42             0.00            0.00              0.00  
+------------------------------------------------------------------------------------------------------------------------------------
+    
+TOTAL MATERIALS CREDITS PER BATCH ($) =  108362.05
+    
+    
+          **NET OPERATING COST PER BATCH ($) = 1030638.29
+    
+    
+          **COST PER KILOGRAM, P ($/kg) =   12086.38
+    
+    
+          **PROFIT PER KILOGRAM, P ($/kg) =    7913.62
+     
+     
+    SUMMARY OF PROCESS ECONOMICS ON AN ANNUAL BASIS
+       (in $ for a 4000 hours Annual Operation)
+-------------------------------------------------------
+NUMBER OF BATCHES PER YEAR =		229.3116
+ANNUAL PRODUCTION OF P (kg) =		19554.0140
+MATERIAL COST (net, $) =		52697670.3441
+UTILITIES COST ($) =			27735695.3831
+LABOR COST ($) =			866954.9778
+EQUIPMENT "RENTAL" COST ($) =		36868326.9562
+NET OPERATING COST ($) =		236337295.3223
+ANNUAL INCOME ($) =			391080279.6493
+OPERATING PROFIT ($) =			154742984.3270

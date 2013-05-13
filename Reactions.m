@@ -79,18 +79,20 @@ dYdt(12)= sum(component_volume(1:9));                                			% change
 % energy conservation equation
 %
 mass_of_reacting_mixture = Reactor_feed(11);    		% in Kilograms
-total_heat_capacity_reacting_mixture = (mass_of_reacting_mixture) *Materials_Properties(8,3);  
+total_heat_capacity_reacting_mixture = (mass_of_reacting_mixture)*Materials_Properties(8,3);  
 					%  assumed that heat capacity is the same as of Solvent S1.
 %
 %   Qdot:  Heat exchanged with surrounding environment
 %   If the Reactor Heater is ON and Water-Cooling is OFF, then Qdot is given by the following equation.   
+
+% TEST:disp(num2str([ReactorHeater, ReactorStir]));
 if(P(1)>0)                              		% i.e. the reactor heater is on
-    Qdot = ReactorStir + (ReactorHeater / 3600);                   	% Add stirrer energy to heater energy, when heater is on, KW
+    Qdot = ReactorStir + ReactorHeater;                   	% Add stirrer energy to heater energy, when heater is on, KW
 end
 %   If Reactor Water-Cooling system is ON and the Reactor Heater is OFF, then Qdot is given by the following equation.
 ReactorCoolTempK = ReactorCoolTemp + 273;
 if(P(2)>0)                              
-    Qdot =  ReactorStir - (ReactorCool * (T - ReactorCoolTempK));   	% Add stirrer energy to cooler when it is on, KW
+    Qdot =  ReactorStir - (ReactorCool* (T - ReactorCoolTempK));   	% Add stirrer energy to cooler when it is on, KW
 end
 %
 %    Total heat rate produced by the three exothermic reactions

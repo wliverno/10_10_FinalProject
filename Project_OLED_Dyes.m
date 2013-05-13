@@ -19,7 +19,7 @@ global  ReactorHeater  ReactionHeatingPeriod  AmountSolvent_S2  %  These are the
 %
 %   STEP-1:  SET THE VALUES OF THE PROJECT'S PARAMETERS
 %
-FigureNumber = 0;
+FigureNumber = 1;
 Set_Parameters;
 %
 %   The SET_PARAMETERS is the function, whose "responsibility" is to assign values to the process parameters.
@@ -40,7 +40,7 @@ switch decision
     disp('  ');
 %
 %  Set the values of the Optimization Variables, which will be used by the Simulator.
-    ReactorHeater = input('Enter output of Reactor Heater (in KW/hr).  Suggested value: 500.  Reactor Heater Output = ');
+    ReactorHeater = input('Enter output of Reactor Heater (in KW).  Suggested value: 500.  Reactor Heater Output = ');
     disp('  ');
     ReactionHeatingPeriod = input('Enter Reactor Heating period (in seconds).  Suggested value: 1500 seconds.  Reactor heating period = ');
     disp('  ');

@@ -74,7 +74,7 @@ Reactor_effluent = Y2(TimeVecCoolLength, :);
 % for i = 1:dimensionsY(1)
     % writeTime(i) = ReactorTimeVector(i);
 % end
-% xlswrite('output', [ReactorTimeVector' , Y]);
+xlswrite('output', [ReactorTimeVector' , Y]);
 % TEST:plot(ReactorTimeVector, Y(:, 10)', '*r');
 
 %   Compute the Economics of the Reactor per batch.

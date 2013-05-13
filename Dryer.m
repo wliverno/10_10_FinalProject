@@ -51,6 +51,6 @@ Utilities_Costs(5,(1:7)) = 0;
 Utilities_Costs(5,6) = dryer_heating_cost;  %  Cost of heating for drying
 Vessel_Rental_Costs(5) = dryer_rental_cost;
 Labor_Costs(5) = dryer_labor_cost;
-Materials_Credits(1,(1:5))= zeros(1,5);
+Materials_Credits(5,(1:5))= zeros(1,5);
 Vessel_Occupancy(5) = drying_period + DryerTurn;    %  Total occupancy time of the reactor vessel, per batch
 

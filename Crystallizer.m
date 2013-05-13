@@ -23,7 +23,7 @@ global  Vessel_Occupancy
 Feed_to_crystallizer = Extractor_Phase_1_exit_stream;   %  The stream of Phase-1 from the extractor is the feed to the crystallizer.
 crystals__from_crystallizer   = (0.9)*Feed_to_crystallizer(3);   %  90% of moles of P crystallize
 weight_of_crystals = crystals__from_crystallizer * Materials_Properties(3,1)/1000;   % Kilograms of crystals, P
-liquid_coating_crystals = (0.01)*weight_of_crystals;        % Kg of liquid coating the crystals in the crystallizer
+liquid_coating_crystals = (0.1)*weight_of_crystals;        % Kg of liquid coating the crystals in the crystallizer
 liquid_after_removal_of_crystals(1:9) = Feed_to_crystallizer(1:9) - [0 0 crystals__from_crystallizer 0 0 0 0 0 0];
 %  The next line computes the mole fractions of all components in the
 %  liquid at the end of crystallization, e.g. (mole fraction of A) = (moles of A)/(sum of moles of all components)

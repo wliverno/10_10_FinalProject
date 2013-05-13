@@ -45,7 +45,7 @@ DryerHeatingPower = 1.5;    % Heating power of the dryer, in KW
 %
 %   No parameters for the Waste Treatment system
 
-disp('Visited ProcessUnitsProperties')
+disp('Visited ProcessUnitsProperties');
 
 end
 
